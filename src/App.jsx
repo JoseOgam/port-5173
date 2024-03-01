@@ -1,10 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
+import { Navbar } from "./components";
+
 function App() {
   return (
-    <div>
-      <div className=" min-h-screen flex items-center justify-center">
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+    <BrowserRouter>
+      <div className=" relative z-0">
+        <div>
+          <Navbar />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 
