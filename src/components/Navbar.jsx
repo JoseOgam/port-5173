@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
+  const [active, setActive] = useState("");
+  const [toggle, setToggle] = useState(false);
   return (
     <nav
       className="w-full flex items-center py-2 fixed 
@@ -14,7 +16,16 @@ const Navbar = () => {
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-14 mt-2">
           {navLinks.map((nav) => (
-            <div key={nav.id}>{nav.title} </div>
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? "text-french" : "text-eerieBlack"
+              } hover:text-taupe text-[21px] font-medium font-mova 
+                uppercase tracking-[3px] cursor-pointer nav-links`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title} </a>
+            </li>
           ))}
         </ul>
       </div>
