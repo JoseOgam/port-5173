@@ -1,5 +1,6 @@
 import React from "react";
-import { bwmap, wmap } from "../assets";
+import { motion } from "framer-motion";
+import { bwmap, worldmap } from "../assets";
 import { styles } from "../styles";
 
 const Hero = () => {
@@ -14,7 +15,7 @@ const Hero = () => {
       </div>
       <div className="absolute top-0 left-0 z-0 h-[100vh] w-screen">
         <img
-          src={wmap}
+          src={worldmap}
           alt="world map"
           className="w-full h-full sm:hidden block object-cover"
         />
@@ -58,6 +59,30 @@ const Hero = () => {
           ></div>
 
           <div></div>
+        </div>
+        <div
+          className="absolute xs:bottom-10 bottom-32 w-full 
+          flex justify-center items-center"
+        >
+          <a href="#about">
+            <div
+              className="w-[35px] h-[64px] rounded-3xl border-4 
+             border-dim flex
+            justify-center items-start p-2"
+            >
+              <motion.div
+                animate={{
+                  y: [0, 24, 0],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                  repeatType: "loop",
+                }}
+                className="w-3 h-3 rounded-full bg-taupe mb-1"
+              />
+            </div>
+          </a>
         </div>
       </section>
     </>

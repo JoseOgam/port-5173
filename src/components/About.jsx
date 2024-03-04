@@ -1,5 +1,6 @@
 import React from "react";
 import { styles } from "../styles";
+import { SectionWrapper } from "../hoc";
 
 const About = () => {
   return (
@@ -23,4 +24,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default SectionWrapper(About, "about");
